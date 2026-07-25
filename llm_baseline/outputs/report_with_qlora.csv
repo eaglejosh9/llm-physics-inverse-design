@@ -1,0 +1,6 @@
+model,condition,n,parse_failure_rate,constraint_satisfaction_rate,mass_spec_MAE_kg,disp_spec_MAE_m,onehot_validity_rate
+qwen2.5-7b-instruct,zero-shot,405,0.0,0.2691,8.1258,0.04977,1.0
+qwen2.5-7b-instruct,few-shot,405,0.0,0.4296,2.0228,0.02829,1.0
+qwen2.5-coder-7b-instruct,zero-shot,405,0.0,0.1877,72.8454,0.34087,1.0
+qwen2.5-coder-7b-instruct,few-shot,405,0.0,0.4198,2.6572,0.05696,1.0
+qwen2.5-7b-qlora,fine-tuned,405,0.0,0.563,0.4703,0.01371,1.0

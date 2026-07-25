@@ -1,0 +1,18 @@
+# Third-party data — see data/README.md for the download link
+FRAMED Dataset/
+
+# Model weights: 646 MB per adapter, far past GitHub's 100 MB file limit.
+# adapter_config.json IS tracked, so the exact LoRA setup is documented.
+*.safetensors
+llm_qlora/adapter_model/tokenizer.json
+llm_qlora/checkpoints_tmp/
+
+# Regenerable from build_dataset.py (deterministic given SEED)
+llm_qlora/outputs/sft_train.jsonl
+llm_qlora/outputs/sft_val.jsonl
+
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.claude/
+.DS_Store

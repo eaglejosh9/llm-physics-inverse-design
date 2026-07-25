@@ -1,0 +1,24 @@
+loading Qwen/Qwen2.5-7B-Instruct (4-bit NF4) + adapter /home/aipexws2/joshua/LLM_Physics/llm_qlora/adapter_model on cuda:0 ...
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights:   1%|          | 2/339 [00:00<00:30, 11.06it/s]/home/aipexws2/anaconda3/envs/llm_physics/lib/python3.11/site-packages/bitsandbytes/backends/cuda/ops.py:213: FutureWarning: _check_is_size will be removed in a future PyTorch release along with guard_size_oblivious.     Use _check(i >= 0) instead.
+  torch._check_is_size(blocksize)
+Loading weights:   5%|▌         | 17/339 [00:00<00:04, 69.41it/s]Loading weights:  12%|█▏        | 42/339 [00:00<00:02, 136.38it/s]Loading weights:  22%|██▏       | 76/339 [00:00<00:01, 201.26it/s]Loading weights:  30%|███       | 102/339 [00:00<00:01, 212.92it/s]Loading weights:  37%|███▋      | 126/339 [00:00<00:00, 219.15it/s]Loading weights:  47%|████▋     | 160/339 [00:00<00:00, 252.37it/s]Loading weights:  55%|█████▍    | 186/339 [00:00<00:00, 245.01it/s]Loading weights:  65%|██████▍   | 220/339 [00:01<00:00, 266.85it/s]Loading weights:  73%|███████▎  | 248/339 [00:01<00:00, 260.12it/s]Loading weights:  83%|████████▎ | 280/339 [00:01<00:00, 270.55it/s]Loading weights:  91%|█████████ | 308/339 [00:01<00:00, 263.77it/s]Loading weights: 100%|██████████| 339/339 [00:01<00:00, 230.45it/s]
+/home/aipexws2/anaconda3/envs/llm_physics/lib/python3.11/site-packages/bitsandbytes/backends/cuda/ops.py:468: FutureWarning: _check_is_size will be removed in a future PyTorch release along with guard_size_oblivious.     Use _check(i >= 0) instead.
+  torch._check_is_size(blocksize)
+2 (condition, test_idx) pairs already present in /home/aipexws2/joshua/LLM_Physics/llm_baseline/outputs/generations_qlora.jsonl, skipping those
+[qlora] 25 written, last test_idx=179, parse_ok=True, 16.1s
+[qlora] 50 written, last test_idx=408, parse_ok=True, 16.3s
+[qlora] 75 written, last test_idx=682, parse_ok=True, 16.5s
+[qlora] 100 written, last test_idx=948, parse_ok=True, 16.0s
+[qlora] 125 written, last test_idx=1192, parse_ok=True, 16.1s
+[qlora] 150 written, last test_idx=1432, parse_ok=True, 16.3s
+[qlora] 175 written, last test_idx=1642, parse_ok=True, 19.4s
+[qlora] 200 written, last test_idx=1886, parse_ok=True, 20.7s
+[qlora] 225 written, last test_idx=2115, parse_ok=True, 20.1s
+[qlora] 250 written, last test_idx=2381, parse_ok=True, 18.5s
+[qlora] 275 written, last test_idx=2603, parse_ok=True, 16.2s
+[qlora] 300 written, last test_idx=2788, parse_ok=True, 16.0s
+[qlora] 325 written, last test_idx=3125, parse_ok=True, 15.9s
+[qlora] 350 written, last test_idx=3399, parse_ok=True, 16.5s
+[qlora] 375 written, last test_idx=3663, parse_ok=True, 16.1s
+[qlora] 400 written, last test_idx=4033, parse_ok=True, 15.8s
+done. wrote 403 new records to /home/aipexws2/joshua/LLM_Physics/llm_baseline/outputs/generations_qlora.jsonl

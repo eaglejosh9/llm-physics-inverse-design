@@ -1,0 +1,13 @@
+# Python 3.11. CUDA GPU required for the QLoRA stage (4-bit NF4 + bitsandbytes);
+# the surrogate and all scoring/reporting run fine on CPU.
+torch==2.13.0
+transformers==5.14.1
+peft==0.19.1
+bitsandbytes==0.49.2
+accelerate==1.14.0
+outlines==1.3.1          # JSON-schema-constrained decoding
+scikit-learn==1.9.0
+pandas==3.0.3
+numpy==2.4.6
+joblib==1.5.3
+matplotlib==3.11.1
