@@ -314,7 +314,7 @@ python report.py                                     # -> outputs/report.csv
 cd llm_qlora
 python build_dataset.py
 torchrun --nproc_per_node=2 train.py                 # ~7.5 h on 2 GPUs
-python generate_qlora.py --device cuda:0
+python generate_qlora.py --condition both --device cuda:0   # zero-shot + few-shot arms
 python ../llm_baseline/score.py --model qlora
 python compare_report.py                             # -> outputs/report_with_qlora.csv
 ```
@@ -365,7 +365,9 @@ drift between the two stages.
 **Does:** where the output space is fixed and physics can be graded in
 milliseconds, a 2%-parameter adapter on a 7B model moves output from *plausible*
 to *quantitatively close* — and reproduces the real design distribution rather
-than hugging its exemplars. On one machine, in hours.
+than hugging its exemplars. Sharpest version of that claim: re-adding the
+exemplars now *costs* it 14.8 points, which is what "learned" rather than
+"prompted" looks like. On one machine, in hours.
 
 **Doesn't:** this is not physics reasoning. It's a strong conditional prior over
 one fixed 39-column parameterization, learned by imitating text. Nothing here
