@@ -4,3 +4,4 @@ qwen2.5-7b-instruct,few-shot,405,0.0,0.4296,2.0228,0.02829,1.0
 qwen2.5-coder-7b-instruct,zero-shot,405,0.0,0.1877,72.8454,0.34087,1.0
 qwen2.5-coder-7b-instruct,few-shot,405,0.0,0.4198,2.6572,0.05696,1.0
 qwen2.5-7b-qlora,fine-tuned,405,0.0,0.563,0.4703,0.01371,1.0
+qwen2.5-7b-qlora,fine-tuned-fewshot,405,0.0,0.4148,0.9362,0.02992,1.0

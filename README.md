@@ -33,9 +33,39 @@ grader in every row — see [Making it fair](#making-it-fair).
 | Qwen2.5-Coder-7B | zero-shot | 18.8% | 72.85 kg | 0.3409 m | 1.00 |
 | Qwen2.5-Coder-7B | few-shot (3 ex.) | 42.0% | 2.66 kg | 0.0570 m | 1.00 |
 | **Qwen2.5-7B + QLoRA** | **fine-tuned, zero-shot** | **56.3%** | **0.47 kg** | **0.0137 m** | **1.00** |
+| Qwen2.5-7B + QLoRA | fine-tuned, few-shot (3 ex.) | 41.5% | 0.94 kg | 0.0299 m | 1.00 |
 
 A design passes only if *every* constraint in its spec is satisfied within
 tolerance (±5% or 0.25 kg for mass; ±15% or 1 cm for deflection).
+
+### Few-shot examples actively *hurt* the fine-tuned model
+
+Handing the fine-tuned model the same 3 worked examples that nearly doubled both
+prompted baselines costs it 14.8 points — dropping it back to roughly baseline
+territory (41.5% vs the best prompted 43.0%), and doubling its mass error.
+
+The mechanism is visible in the mass distribution. The three exemplars weigh
+**1.04 kg, 22.83 kg and 4.39 kg** — two of the three sit outside the dataset's
+own p10–p90 band of 2.12–7.50 kg, because they were selected to be *diverse*
+(light-and-stiff, heavy, typical), which is what makes them informative to a
+model that knows nothing:
+
+| | p10 | median | p90 | max |
+|---|---|---|---|---|
+| Real FRAMED frames | 2.12 kg | 4.38 kg | 7.50 kg | 22.83 kg |
+| QLoRA zero-shot | 1.94 kg | 4.47 kg | 7.40 kg | 11.20 kg |
+| QLoRA + few-shot | 1.43 kg | 3.96 kg | 6.65 kg | 18.83 kg |
+
+Conditioning on the exemplars drags the fine-tuned model's output distribution
+lighter and wider — away from the dataset prior it had already learned. The
+per-constraint-type breakdown confirms the direction: satisfaction on *at-least*
+mass constraints collapses from 64.5% to 39.8%, while *at-most* constraints
+barely move (83.2% → 80.5%) — exactly what a downward mass bias produces.
+
+So the exemplars aren't adding information any more; they're overriding a better
+prior with three unrepresentative points. Fine-tuning didn't just make examples
+unnecessary — it made them counterproductive. (One exemplar set, one model; a
+representative-sample exemplar set might well behave differently.)
 
 ### The satisfaction rate is the least interesting number here
 
